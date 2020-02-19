@@ -15,6 +15,15 @@ Lines::Engine.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
 
+
+  resources :technical_articles, only: [:index], controller: :technical_articles do
+    get 'page/:page', action: :index, on: :collection
+  end
+
+  resources :news_articles, only: [:index], controller: :news_articles do
+    get 'page/:page', action: :index, on: :collection
+  end
+
   resources :short_articles, only: [:index, :show], controller: :articles do
     get 'page/:page', action: :index, on: :collection
   end
