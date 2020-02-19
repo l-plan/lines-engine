@@ -30,6 +30,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
   
   def root
-    Rails.root.join 'public/'
+    # Rails.root.join 'public/'
+    CONFIG[:image_root] 
   end
 end
