@@ -5,6 +5,7 @@ require_dependency "lines/application_controller"
 module Lines
 
   class ArticlesController < ApplicationController
+    before_action :set_articles, only: :index
 
     layout 'lines/application'
 
@@ -17,11 +18,11 @@ module Lines
       respond_to do |format|
         format.html {
           @first_page = (params[:page] and params[:page].to_i > 0) ? false : true
-          if params[:tag]
-            @articles = Lines::Article.published.tagged_with(params[:tag]).page(params[:page].to_i)
-          else
-            @articles = Lines::Article.published.page(params[:page].to_i).padding(1)
-          end
+          # if params[:tag]
+          #   @articles = Lines::Article.published.tagged_with(params[:tag]).page(params[:page].to_i)
+          # else
+          #   @articles = Lines::Article.published.page(params[:page].to_i).padding(1)
+          # end
           
           if @articles.first_page?
             if @first_article = Article.published.first
@@ -44,6 +45,7 @@ module Lines
           @articles = Lines::Article.published
         }
       end
+      
     end
 
     # Shows specific article
@@ -65,6 +67,16 @@ module Lines
       end
 
       @related_articles = Lines::Article.published.where('id != ?', @article.id).order('').limit(2)
+    end
+
+    private
+
+    def set_articles
+          if params[:tag]
+            @articles = Lines::Article.published.tagged_with(params[:tag]).page(params[:page].to_i)
+          else
+            @articles = Lines::Article.published.page(params[:page].to_i).padding(1)
+          end
     end
 
   end

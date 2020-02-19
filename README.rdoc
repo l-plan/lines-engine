@@ -4,6 +4,11 @@
 
 {<img src="https://badge.fury.io/rb/lines-engine.svg" alt="Gem Version" />}[http://badge.fury.io/rb/lines-engine]
 
+== This fork
+- application controller inherits from the main-app's application controller
+- rails and railties versions can go up to just under rails 7
+- kaminari-view: nav class 'pagination' now is '_pagination_', since it is not used by lines, but other apps do...
+- the root directory for uploads has moved to the config-file
 
 == Introduction
 
