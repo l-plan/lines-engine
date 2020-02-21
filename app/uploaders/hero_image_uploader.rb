@@ -25,8 +25,7 @@ class HeroImageUploader < CarrierWave::Uploader::Base
   end
 
   def root
-    # Rails.root.join 'public/'
-    CONFIG[:image_root] 
+    Rails.root.join 'public/'
   end
 
 end
