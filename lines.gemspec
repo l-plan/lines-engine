@@ -40,13 +40,13 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'friendly_id', '>= 5.2.4'
   s.add_runtime_dependency 'rails3-jquery-autocomplete', '>= 1.0.11'
   s.add_runtime_dependency 'meta-tags', '>= 2.0.0'
-  s.add_runtime_dependency 'i18n', '>= 0.7.0'
+  s.add_runtime_dependency 'i18n', '>= 1.7.0'
   s.add_runtime_dependency 'sprockets-rails', '< 4'
   s.add_runtime_dependency 'rails', ['>= 3', '< 7']
 
   s.add_development_dependency 'mysql2'
-  s.add_development_dependency 'rspec-rails', '~> 2.14.2', '< 3'
-  s.add_development_dependency 'rspec', '~> 2.14.1', '< 3'
+  s.add_development_dependency 'rspec-rails', '~> 3.9.0' #, '~> 2.14.2', '< 3'
+  s.add_development_dependency 'rspec','>= 3' #, '~> 2.14.1', '< 3'
 
   s.files         = `git ls-files`.split("\n").select{ |file_name| !(file_name =~ /^spec/) }
   s.test_files    = `git ls-files`.split("\n").select{ |file_name| (file_name =~ /^spec/) }
