@@ -7,7 +7,8 @@
 == This fork
 - application controller inherits from the main-app's application controller
 - rails and railties versions can go up to just under rails 7
-- kaminari-view: nav class 'pagination' now is '_pagination_', since it is not used by lines, but other apps do...
+- kaminari-view: nav class 'pagination' now is "__pagination__", since it is not used by lines, but other apps do...
+- extension_white_list now is extension_whitelist in picture_uploader.rb, since carrierwave heas updated beyond version 1.
 
 == Introduction
 
